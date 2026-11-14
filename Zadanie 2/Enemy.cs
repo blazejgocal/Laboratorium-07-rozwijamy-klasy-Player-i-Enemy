@@ -2,12 +2,14 @@
 {
     public string Name { get; }
     public int Health { get; set; }
+    public int MaxHealth { get; set; }
     public int Damage { get; }
 
-    public Enemy(string name, int health, int damage)
+    public Enemy(string name, int maxHealth, int damage)
     {
         Name = name;
-        Health = health;
+        Health = maxHealth;
+        MaxHealth = maxHealth;
         Damage = damage;
     }
 
@@ -30,5 +32,14 @@
     public bool IsAlive()
     {
         return Health > 0;
+    }
+    
+    public void Heal(int amount)
+    {
+        Health += amount;
+        if (Health > MaxHealth)
+        {
+            Health = MaxHealth;
+        }
     }
 }

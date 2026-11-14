@@ -1,22 +1,29 @@
-﻿public class Player
+public class Player
 {
     public string Name { get; }
+    public string Rank { get; }
+    public string Description { get; }
     public int Level { get; set; }
     public int XP { get; set; }
     public int MaxXP { get; set; }
     public int Health { get; set; }
     public int MaxHealth { get; set; }
     public int Damage { get; set; }
+    public int Medicine { get; set; }
+    public int XpPoints { get; set; }
 
-    public Player(string name, int level, int xp, int maxXP, int health, int maxHealth, int damage)
+    public Player(string name, string rank, string description, int level, int xp, int maxXP, int maxHealth, int medicine, int xpPoints )
     {
         Name = name;
+        Rank = rank;
+        Description = description;
         Level = level;
         XP = xp;
         MaxXP = maxXP;
-        Health = health;
+        Health = maxHealth;
         MaxHealth = maxHealth;
-        Damage =  damage;
+        Medicine = medicine;
+        XpPoints = xpPoints;
     }
 
     public void TakeDamage(int damage)
@@ -69,8 +76,6 @@
     public void NewXpLevel()
     {
         Level += 1;
-        MaxHealth += 20;
-        Health += 20;
-        Damage += 20;
+        XpPoints += 1;
     }
 }
