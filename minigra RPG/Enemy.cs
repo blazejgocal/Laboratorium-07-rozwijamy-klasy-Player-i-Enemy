@@ -4,13 +4,15 @@
     public int Health { get; set; }
     public int MaxHealth { get; set; }
     public int Damage { get; }
+    public int XpReward { get; }
 
-    public Enemy(string name, int maxHealth, int damage)
+    public Enemy(string name, int maxHealth, int damage, int xpReward)
     {
         Name = name;
         Health = maxHealth;
         MaxHealth = maxHealth;
         Damage = damage;
+        XpReward = xpReward;
     }
 
     public void TakeDamage(int damage)

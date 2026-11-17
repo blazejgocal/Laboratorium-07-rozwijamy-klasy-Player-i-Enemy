@@ -11,8 +11,9 @@ public class Player
     public int Damage { get; set; }
     public int Medicine { get; set; }
     public int XpPoints { get; set; }
+    public int Strength { get; set; }
 
-    public Player(string name, string rank, string description, int level, int xp, int maxXP, int maxHealth, int medicine, int xpPoints )
+    public Player(string name, string rank, string description, int level, int xp, int maxXP, int maxHealth, int medicine, int xpPoints,  int strength)
     {
         Name = name;
         Rank = rank;
@@ -24,6 +25,7 @@ public class Player
         MaxHealth = maxHealth;
         Medicine = medicine;
         XpPoints = xpPoints;
+        Strength = strength;
     }
 
     public void TakeDamage(int damage)
